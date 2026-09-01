@@ -98,7 +98,7 @@ export default function Navigation() {
         </button>
       </header>
 
-      <div className="nav-panel">
+      <div className={`nav-panel ${isOpen ? 'nav-panel--open' : ''}`}>
         <div ref={panelRef} className="nav-panel__bg" />
         <div ref={contentRef} className="nav-panel__content" style={{ opacity: 0 }}>
           <nav className="nav-panel__links">

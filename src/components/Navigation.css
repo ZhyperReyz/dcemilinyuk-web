@@ -97,6 +97,15 @@
   pointer-events: auto;
 }
 
+/* When panel is open: bg stops blocking, content becomes clickable */
+.nav-panel--open .nav-panel__bg {
+  pointer-events: none;
+}
+
+.nav-panel--open .nav-panel__content {
+  pointer-events: auto;
+}
+
 .nav-panel__content {
   position: absolute;
   inset: 0;
@@ -107,10 +116,7 @@
   pointer-events: none;
 }
 
-/* When panel is open, enable clicks on content */
-.topnav--open ~ .nav-panel .nav-panel__content {
-  pointer-events: auto;
-}
+
 
 .nav-panel__links {
   display: flex;

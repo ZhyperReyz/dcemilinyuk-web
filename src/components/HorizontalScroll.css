@@ -27,7 +27,7 @@
   flex-shrink: 0;
   width: 38vw;
   max-width: 480px;
-  will-change: transform;
+  will-change: transform, opacity;
   transform-origin: center center;
 }
 
@@ -60,13 +60,12 @@
   margin-top: 1.25rem;
   color: var(--color-text-muted);
   transform: translateY(15px);
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
 .hscroll__item:first-child { margin-left: 2vw; }
 .hscroll__item:last-child { margin-right: 2vw; }
 
-/* Space left for pin-spacer */
 .hscroll__container + .section {
   position: relative;
 }

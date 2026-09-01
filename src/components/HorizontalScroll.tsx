@@ -28,16 +28,8 @@ export default function HorizontalScroll() {
     const ctx = gsap.context(() => {
       const items = strip.querySelectorAll('.hscroll__item')
 
-      // totalWidth = lebar penuh strip - viewport width
-      // Ini memastikan foto terakhir (paling kanan) sepenuhnya terlihat sebelum unpin
       const getTotalWidth = () => strip.scrollWidth - window.innerWidth
 
-      // Main horizontal scroll
-      // start: 'center center' → section mulai ke-pin tepat saat CENTER section
-      //   berada di CENTER viewport. Artinya section sudah terlihat penuh di tengah layar
-      //   begitu pin aktif.
-      // end: dynamic berdasarkan totalWidth → scroll cukup panjang sampai foto
-      //   terakhir full terlihat, baru section unpin.
       const scrollTween = gsap.to(strip, {
         x: () => -getTotalWidth(),
         ease: 'none',
@@ -53,12 +45,12 @@ export default function HorizontalScroll() {
         },
       })
 
-      // Per-item: scale animation as each item enters center of viewport
-      // No opacity set — items stay visible (was causing dark/stuck photos)
       items.forEach((item, i) => {
-        gsap.fromTo(item,
-          { scale: 0.9 },
-          { scale: 1,
+        gsap.set(item, { scale: 0.85, opacity: 0.3 })
+
+        gsap.to(item, {
+          scale: 1,
+          opacity: 1,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: container,
@@ -88,7 +80,6 @@ export default function HorizontalScroll() {
       })
     }, containerRef)
 
-    // Recalculate positions after images load (Unsplash images are async)
     const refreshTimeout = setTimeout(() => ScrollTrigger.refresh(), 800)
 
     return () => {

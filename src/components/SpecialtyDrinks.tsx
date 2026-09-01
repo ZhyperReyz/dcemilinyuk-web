@@ -5,33 +5,33 @@ import './SpecialtyDrinks.css'
 
 /**
  * Ref: Hover Effects/2 — text chars disperse on hover, background image appears
- * Specialty drinks showcase — hover to reveal drink details with scattered text
+ * Uses real URJA menu data as signature drinks
  */
 
-const drinks = [
+const signatureDrinks = [
   {
-    name: 'Ethiopian Yirgacheffe',
-    desc: 'Bright citrus · Floral jasmine · Light roast',
+    name: 'Putih',
+    desc: 'Kopi susu klasik racikan URJA',
+    price: 'Rp 28.000',
     image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80',
-    price: '$4.50',
   },
   {
-    name: 'Cold Brew Tonic',
-    desc: '24hr cold brew · Artisan tonic · Orange peel',
+    name: 'Legit',
+    desc: 'Kopi susu manis dengan salted foam dan saus butterscotch',
+    price: 'Rp 28.000',
     image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80',
-    price: '$5.80',
   },
   {
-    name: 'Matcha Ceremony',
-    desc: 'Ceremonial grade · Oat milk · Raw honey',
-    image: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&q=80',
-    price: '$5.50',
-  },
-  {
-    name: 'Maple Oat Latte',
-    desc: 'Organic maple · Creamy oat · House espresso',
+    name: 'Enerji',
+    desc: 'Espresso dengan tambahan Red Bull Energy Drink',
+    price: 'Rp 32.000',
     image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80',
-    price: '$6.00',
+  },
+  {
+    name: 'Aurora',
+    desc: 'Perpaduan jeruk, asam-manis, dan teh telang beraroma lembut',
+    price: 'Rp 28.000',
+    image: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&q=80',
   },
 ]
 
@@ -67,7 +67,6 @@ export default function SpecialtyDrinks() {
 
       if (!nameEl || !bgEl || !descEl) return
 
-      // Split name into chars
       const text = nameEl.textContent || ''
       nameEl.innerHTML = ''
       ;[...text].forEach((char) => {
@@ -80,9 +79,7 @@ export default function SpecialtyDrinks() {
       const chars = nameEl.querySelectorAll('.specialty-char')
 
       item.addEventListener('mouseenter', () => {
-        // Background image fade in
         gsap.to(bgEl, { opacity: 0.3, duration: 0.4 })
-        // Chars scatter
         gsap.to(chars, {
           x: () => gsap.utils.random(-30, 30),
           y: () => gsap.utils.random(-20, 20),
@@ -91,7 +88,6 @@ export default function SpecialtyDrinks() {
           ease: 'power2.out',
           stagger: 0.01,
         })
-        // Desc appears
         gsap.to(descEl, { opacity: 1, y: 0, duration: 0.4, delay: 0.1 })
       })
 
@@ -113,11 +109,11 @@ export default function SpecialtyDrinks() {
           <span className="text-line"><em>Drinks</em></span>
         </div>
         <p className="text-body specialty__subtitle reveal-child">
-          Hover to discover what makes each one special.
+          Hover untuk lihat yang membuat setiap minuman spesial.
         </p>
 
         <div ref={listRef} className="specialty__list">
-          {drinks.map((drink, i) => (
+          {signatureDrinks.map((drink, i) => (
             <div key={i} className="specialty-item">
               <div className="specialty-item__bg" style={{ backgroundImage: `url(${drink.image})` }} />
               <div className="specialty-item__content">

@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { useTextReveal } from '../hooks/useScrollReveal'
 import './Menu.css'
 
-const categories = [
+export const categories = [
   'Kopi',
   'Kopi Kaleng',
   'Penyegar',
@@ -14,14 +14,14 @@ const categories = [
   'Cemilan',
 ]
 
-interface MenuItem {
+export interface MenuItem {
   name: string
   desc?: string
   price: string
   spicy?: boolean
 }
 
-const menuData: Record<string, MenuItem[]> = {
+export const menuData: Record<string, MenuItem[]> = {
   'Kopi': [
     { name: 'Putih', price: '28.000', desc: 'Kopi susu klasik racikan URJA' },
     { name: 'Legit', price: '28.000', desc: 'Kopi susu manis dengan salted foam dan saus butterscotch' },
@@ -88,17 +88,20 @@ const menuData: Record<string, MenuItem[]> = {
 
 export default function Menu() {
   const titleRef = useTextReveal()
-  const gridRef = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState('Kopi')
+  const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!gridRef.current) return
     const cards = gridRef.current.querySelectorAll('.menu-card')
+    if (cards.length === 0) return
     gsap.fromTo(cards,
-      { y: 25, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.45, ease: 'power3.out', stagger: 0.04 }
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out', stagger: 0.03 }
     )
   }, [active])
+
+  const items = menuData[active] || []
 
   return (
     <section className="menu section" id="menu">
@@ -128,7 +131,7 @@ export default function Menu() {
 
         {/* Items */}
         <div ref={gridRef} className="menu__grid">
-          {menuData[active]?.map((item, i) => (
+          {items.map((item, i) => (
             <div key={`${active}-${i}`} className="menu-card">
               <div className="menu-card__header">
                 <div className="menu-card__name-wrap">
@@ -136,10 +139,7 @@ export default function Menu() {
                     {item.name}
                     {item.spicy && (
                       <span className="menu-card__spicy" title="Pedas">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 2c1 3 2.5 3.5 3.5 4.5A5 5 0 0 1 17 10a5 5 0 1 1-10 0c0-.3 0-.6.1-.9a2 2 0 1 0 3.3-2C8 5.1 12 2 12 2z"/>
-                        </svg>
-                        Pedas
+                        🌶️ Pedas
                       </span>
                     )}
                   </h3>

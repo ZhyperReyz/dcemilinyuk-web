@@ -2,6 +2,8 @@
 .hscroll {
   padding: var(--space-2xl) 0 0;
   overflow: hidden;
+  will-change: transform, opacity;
+  transform-origin: left center;
 }
 
 .hscroll__title .text-line { display: block; overflow: hidden; }

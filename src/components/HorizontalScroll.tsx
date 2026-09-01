@@ -6,11 +6,6 @@ import './HorizontalScroll.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-/**
- * Ref: Hero Animations/2 — strip scroll with tiles
- * Smoother version: per-item scale + opacity + parallax depth
- */
-
 const images = [
   { src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80', alt: 'Cafe interior' },
   { src: 'https://images.unsplash.com/photo-1559925398-09797111c53d?w=800&q=80', alt: 'Coffee bar' },
@@ -22,19 +17,38 @@ const images = [
 
 export default function HorizontalScroll() {
   const titleRef = useTextReveal()
+  const sectionRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const stripRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const section = sectionRef.current
     const container = containerRef.current
     const strip = stripRef.current
-    if (!container || !strip) return
+    if (!container || !strip || !section) return
 
     const ctx = gsap.context(() => {
+      // Slide-in entrance when reaching the section
+      gsap.fromTo(section,
+        { xPercent: 15, opacity: 0 },
+        {
+          xPercent: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+            end: 'top 40%',
+            scrub: 0.8,
+          },
+        }
+      )
+
       const items = strip.querySelectorAll('.hscroll__item')
       const totalWidth = strip.scrollWidth - window.innerWidth
 
-      // Main horizontal scroll — smoother scrub
+      // Main horizontal scroll
       const scrollTween = gsap.to(strip, {
         x: -totalWidth,
         ease: 'none',
@@ -48,15 +62,10 @@ export default function HorizontalScroll() {
         },
       })
 
-      // Per-item animations — scale + opacity as they enter center
+      // Per-item animations
       items.forEach((item, i) => {
-        const img = item.querySelector('img')
-        const label = item.querySelector('.hscroll__item-label')
-
-        // Start items slightly scaled down and faded
         gsap.set(item, { scale: 0.85, opacity: 0.3 })
 
-        // As the strip scrolls, animate each item when it's near center
         gsap.to(item, {
           scale: 1,
           opacity: 1,
@@ -70,24 +79,7 @@ export default function HorizontalScroll() {
           },
         })
 
-        // Subtle parallax on the image inside
-        if (img) {
-          gsap.fromTo(img,
-            { yPercent: 10 },
-            {
-              yPercent: -10,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: container,
-                start: 'top top',
-                end: () => `+=${totalWidth}`,
-                scrub: 2,
-              },
-            }
-          )
-        }
-
-        // Label fade in
+        const label = item.querySelector('.hscroll__item-label')
         if (label) {
           gsap.fromTo(label,
             { opacity: 0, y: 15 },
@@ -104,13 +96,13 @@ export default function HorizontalScroll() {
           )
         }
       })
-    }, containerRef)
+    }, sectionRef)
 
     return () => ctx.revert()
   }, [])
 
   return (
-    <section className="hscroll" id="horizontal">
+    <section ref={sectionRef} className="hscroll" id="horizontal">
       <div className="container">
         <div ref={titleRef} className="hscroll__title heading-lg">
           <span className="text-line">Our</span>

@@ -41,7 +41,7 @@ export default function Footer() {
               <a href="#" className="footer__link">Instagram</a>
               <a href="#" className="footer__link">TikTok</a>
               <a href="#" className="footer__link">Twitter</a>
-              <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram DM</a>
+              <a href="https://www.instagram.com/urjacoffee.id?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram DM</a>
             </div>
           </div>
         </div>

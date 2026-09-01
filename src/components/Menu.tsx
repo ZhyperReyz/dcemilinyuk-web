@@ -166,7 +166,7 @@ export default function Menu() {
 
         <div className="menu__footer reveal-child">
           <p className="text-body">Follow kami di Instagram</p>
-          <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="btn-outline">
+          <a href="https://www.instagram.com/urjacoffee.id?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="btn-outline">
             @urjacoffee.id
           </a>
         </div>

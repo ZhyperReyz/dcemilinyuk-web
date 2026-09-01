@@ -53,13 +53,12 @@ export default function HorizontalScroll() {
         },
       })
 
-      // Per-item: scale + fade as each item enters center of viewport
+      // Per-item: scale animation as each item enters center of viewport
+      // No opacity set — items stay visible (was causing dark/stuck photos)
       items.forEach((item, i) => {
-        gsap.set(item, { scale: 0.85, opacity: 0.3 })
-
-        gsap.to(item, {
-          scale: 1,
-          opacity: 1,
+        gsap.fromTo(item,
+          { scale: 0.9 },
+          { scale: 1,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: container,

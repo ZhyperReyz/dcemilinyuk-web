@@ -27,7 +27,7 @@
   flex-shrink: 0;
   width: 38vw;
   max-width: 480px;
-  will-change: transform, opacity;
+  will-change: transform;
   transform-origin: center center;
 }
 
@@ -60,7 +60,7 @@
   margin-top: 1.25rem;
   color: var(--color-text-muted);
   transform: translateY(15px);
-  will-change: transform, opacity;
+  will-change: transform;
 }
 
 .hscroll__item:first-child { margin-left: 2vw; }

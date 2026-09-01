@@ -28,9 +28,9 @@ export default function HorizontalScroll() {
     if (!container || !strip || !section) return
 
     const ctx = gsap.context(() => {
-      // Slide-in entrance — starts when section hits middle of viewport
+      // Slide-in entrance — plays once when section enters viewport middle
       gsap.fromTo(section,
-        { xPercent: 10, opacity: 0 },
+        { xPercent: 8, opacity: 0 },
         {
           xPercent: 0,
           opacity: 1,
@@ -38,9 +38,8 @@ export default function HorizontalScroll() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 60%',
-            end: 'top 20%',
-            scrub: 1,
+            start: 'top 65%',
+            toggleActions: 'play none none none',
           },
         }
       )

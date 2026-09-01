@@ -17,51 +17,37 @@ const images = [
 
 export default function HorizontalScroll() {
   const titleRef = useTextReveal()
-  const sectionRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const stripRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const section = sectionRef.current
     const container = containerRef.current
     const strip = stripRef.current
-    if (!container || !strip || !section) return
+    if (!container || !strip) return
 
     const ctx = gsap.context(() => {
-      // Slide-in entrance — plays once when section enters viewport middle
-      gsap.fromTo(section,
-        { xPercent: 8, opacity: 0 },
-        {
-          xPercent: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 65%',
-            toggleActions: 'play none none none',
-          },
-        }
-      )
-
       const items = strip.querySelectorAll('.hscroll__item')
       const totalWidth = strip.scrollWidth - window.innerWidth
 
-      // Main horizontal scroll
+      // Set initial position: strip starts off-screen to the right
+      gsap.set(strip, { x: window.innerWidth * 0.3 })
+
+      // Main horizontal scroll — strip slides from right → left
+      // Pin starts when container top hits viewport center
       const scrollTween = gsap.to(strip, {
         x: -totalWidth,
         ease: 'none',
         scrollTrigger: {
           trigger: container,
-          start: 'top top',
+          start: 'top center',   // pin starts when section top reaches viewport center
           end: () => `+=${totalWidth}`,
-          scrub: 1.5,
+          scrub: 1.2,
           pin: true,
           anticipatePin: 1,
         },
       })
 
-      // Per-item animations
+      // Per-item: scale + fade as each item enters center
       items.forEach((item, i) => {
         gsap.set(item, { scale: 0.85, opacity: 0.3 })
 
@@ -95,13 +81,19 @@ export default function HorizontalScroll() {
           )
         }
       })
-    }, sectionRef)
+    }, containerRef)
 
-    return () => ctx.revert()
+    // Refresh after images load
+    const refreshTimeout = setTimeout(() => ScrollTrigger.refresh(), 500)
+
+    return () => {
+      clearTimeout(refreshTimeout)
+      ctx.revert()
+    }
   }, [])
 
   return (
-    <section ref={sectionRef} className="hscroll" id="horizontal">
+    <section className="hscroll" id="horizontal">
       <div className="container">
         <div ref={titleRef} className="hscroll__title heading-lg">
           <span className="text-line">Our</span>

@@ -2,8 +2,6 @@
 .hscroll {
   padding: var(--space-2xl) 0 0;
   overflow: hidden;
-  will-change: transform, opacity;
-  transform-origin: left center;
 }
 
 .hscroll__title .text-line { display: block; overflow: hidden; }
@@ -13,6 +11,7 @@
 .hscroll__container {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .hscroll__strip {
@@ -66,6 +65,11 @@
 
 .hscroll__item:first-child { margin-left: 5vw; }
 .hscroll__item:last-child { margin-right: 5vw; }
+
+/* Space left for pin-spacer */
+.hscroll__container + .section {
+  position: relative;
+}
 
 @media (max-width: 768px) {
   .hscroll__item {

@@ -42,7 +42,7 @@ export default function Gallery() {
           ease: 'power4.inOut',
           scrollTrigger: {
             trigger: item,
-            start: 'top 88%',
+            start: 'top 60%',
           },
           delay: i * 0.08,
         })
@@ -54,7 +54,7 @@ export default function Gallery() {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: item,
-              start: 'top 88%',
+              start: 'top 60%',
             },
             delay: i * 0.08,
           })

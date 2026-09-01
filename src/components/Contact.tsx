@@ -44,20 +44,18 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="contact__map-placeholder reveal-child">
-              <div className="contact__map-pin">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/>
-                  <circle cx="12" cy="9" r="2.5" fill="var(--color-bg)"/>
-                </svg>
-                <span className="text-sm">127 Roastery Lane</span>
-              </div>
-              <div className="contact__map-grid">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div key={i} className="contact__map-line-h" />
-                ))}
-              </div>
+            {/* Google Maps embed */}
+            <div className="contact__map reveal-child">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4871816188083!2d112.7291802793457!3d-7.299032200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb49f819e28b%3A0x5f0d858e61eb6478!2sUrja!5e0!3m2!1sid!2sus!4v1788235650429!5m2!1sid!2sus"
+                width="100%"
+                height="300"
+                style={{ border: 0, borderRadius: '4px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Urja Coffee Location"
+              />
             </div>
           </div>
 

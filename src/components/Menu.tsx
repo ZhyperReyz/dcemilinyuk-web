@@ -165,10 +165,10 @@ export default function Menu() {
         </div>
 
         <div className="menu__footer reveal-child">
-          <p className="text-body">Mau reservasi?</p>
-          <button className="btn-outline" onClick={() => document.getElementById('reservation')?.scrollIntoView({ behavior: 'smooth' })}>
-            Book a Table
-          </button>
+          <p className="text-body">Follow kami di Instagram</p>
+          <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="btn-outline">
+            @urjacoffee
+          </a>
         </div>
       </div>
     </section>

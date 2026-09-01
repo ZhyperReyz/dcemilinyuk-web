@@ -10,7 +10,6 @@ const navItems = [
   { id: 'horizontal', label: 'Space' },
   { id: 'gallery', label: 'Gallery' },
   { id: 'events', label: 'Events' },
-  { id: 'reservation', label: 'Reserve' },
   { id: 'contact', label: 'Contact' },
 ]
 

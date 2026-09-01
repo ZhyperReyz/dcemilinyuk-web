@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="footer__col">
             <h4 className="text-sm footer__col-title">Pages</h4>
             <div className="footer__links">
-              {['about', 'menu', 'gallery', 'events', 'contact'].map((id) => (
+              {['about', 'menu', 'gallery', 'events', 'contact'].map((id: string) => (
                 <button key={id} className="footer__link" onClick={() => scrollTo(id)}>
                   {id.charAt(0).toUpperCase() + id.slice(1)}
                 </button>
@@ -41,7 +41,7 @@ export default function Footer() {
               <a href="#" className="footer__link">Instagram</a>
               <a href="#" className="footer__link">TikTok</a>
               <a href="#" className="footer__link">Twitter</a>
-              <a href="mailto:hello@urjacoffee.co" className="footer__link">Email</a>
+              <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram DM</a>
             </div>
           </div>
         </div>

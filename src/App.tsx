@@ -17,8 +17,6 @@ import HorizontalScroll from './components/HorizontalScroll'
 import Gallery from './components/Gallery'
 import Testimonials from './components/Testimonials'
 import Events from './components/Events'
-import Reservation from './components/Reservation'
-import Newsletter from './components/Newsletter'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import './App.css'
@@ -37,10 +35,8 @@ import './App.css'
  * 8. Gallery            — clip-path image reveals
  * 9. Testimonials       — rotating quotes
  * 10. Events            — workshops
- * 11. Reservation       — booking form
- * 12. Newsletter        — loyalty signup
- * 13. Contact           — info + form
- * 14. Footer            — links
+ * 11. Contact           — info + Instagram link
+ * 12. Footer            — links
  */
 export default function App() {
   const [loaded, setLoaded] = useState(false)
@@ -100,11 +96,7 @@ export default function App() {
         <Events />
         <div className="section-divider" />
 
-        <Reservation />
-        <div className="section-divider" />
 
-        <Newsletter />
-        <div className="section-divider" />
 
         <Contact />
         <Footer />

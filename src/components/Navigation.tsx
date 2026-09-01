@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import gsap from 'gsap'
 import './Navigation.css'
 
@@ -21,6 +21,7 @@ export default function Navigation() {
   const panelRef = useRef<HTMLDivElement>(null)
   const btnLabelRef = useRef<HTMLSpanElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const isOpenRef = useRef(false)
 
   useEffect(() => {
     if (!panelRef.current || !btnLabelRef.current || !contentRef.current) return
@@ -38,29 +39,43 @@ export default function Navigation() {
       0.3
     )
     tl.fromTo('.nav-panel__footer',
-      { opacity: 0 }, { opacity: 1, duration: 0.4 },
-      0.5
+      { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.5
     )
 
     tlRef.current = tl
     return () => { tl.kill() }
   }, [])
 
-  const toggle = () => {
-    if (isOpen) tlRef.current?.reverse()
-    else tlRef.current?.play()
-    setIsOpen(!isOpen)
-  }
+  const toggle = useCallback(() => {
+    const tl = tlRef.current
+    if (!tl) return
+
+    if (isOpenRef.current) {
+      // Currently open → close
+      tl.reverse()
+      isOpenRef.current = false
+      setIsOpen(false)
+    } else {
+      // Currently closed → open
+      tl.play()
+      isOpenRef.current = true
+      setIsOpen(true)
+    }
+  }, [])
 
   const scrollTo = (id: string) => {
-    setIsOpen(false)
-    tlRef.current?.reverse()
+    // Close panel first
+    if (isOpenRef.current) {
+      tlRef.current?.reverse()
+      isOpenRef.current = false
+      setIsOpen(false)
+    }
     setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     }, 400)
   }
 
-  // Simple scroll detection — no GSAP animation, just CSS class
+  // Simple scroll detection
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80)

@@ -107,6 +107,11 @@
   pointer-events: none;
 }
 
+/* When panel is open, enable clicks on content */
+.topnav--open ~ .nav-panel .nav-panel__content {
+  pointer-events: auto;
+}
+
 .nav-panel__links {
   display: flex;
   flex-direction: column;

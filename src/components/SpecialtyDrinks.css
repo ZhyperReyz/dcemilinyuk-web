@@ -1,4 +1,4 @@
-/* Specialty Drinks — ref: Hover Effects/2 */
+/* Specialty Drinks */
 .specialty {
   padding: var(--space-2xl) 0;
   overflow: hidden;
@@ -6,7 +6,6 @@
 
 .specialty__title .text-line { display: block; overflow: hidden; }
 .specialty__title em { color: var(--color-accent); }
-
 .specialty__subtitle { margin-bottom: var(--space-xl); }
 
 .specialty__list {
@@ -16,7 +15,7 @@
 
 .specialty-item {
   position: relative;
-  padding: 2.5rem 0;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--color-border-light);
   cursor: pointer;
   overflow: hidden;
@@ -26,7 +25,6 @@
   border-top: 1px solid var(--color-border-light);
 }
 
-/* Background image on hover */
 .specialty-item__bg {
   position: absolute;
   inset: 0;
@@ -47,15 +45,15 @@
 
 .specialty-item__price {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-accent);
-  min-width: 70px;
+  min-width: 60px;
   flex-shrink: 0;
 }
 
 .specialty-item__name {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.3rem, 3vw, 2.5rem);
   font-weight: 400;
   display: inline-block;
 }
@@ -68,10 +66,10 @@
 .specialty-item__desc {
   position: absolute;
   bottom: -1.5rem;
-  left: 90px;
+  left: 80px;
   opacity: 0;
   transform: translateY(10px);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
   white-space: nowrap;
 }
@@ -91,6 +89,29 @@
 }
 
 @media (max-width: 768px) {
-  .specialty-item__content { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-  .specialty-item__desc { position: static; opacity: 1; transform: none; margin-top: 0.5rem; }
+  .specialty-item {
+    padding: 1.5rem 0;
+  }
+
+  .specialty-item__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .specialty-item__desc {
+    position: static;
+    opacity: 1;
+    transform: none;
+    white-space: normal;
+    margin-top: 0.5rem;
+  }
+
+  .specialty-item__name {
+    font-size: 1.3rem;
+  }
+
+  .specialty-item__price {
+    font-size: 1rem;
+  }
 }

@@ -59,7 +59,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Typography */
 .heading-xl {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(2.5rem, 8vw, 8rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -67,26 +67,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .heading-lg {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: clamp(1.8rem, 5vw, 4.5rem);
   font-weight: 400;
   line-height: 1.1;
 }
 
 .heading-md {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.3rem, 3vw, 2.5rem);
   font-weight: 400;
   line-height: 1.2;
 }
 
 .text-body {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   color: var(--color-text-muted);
 }
 
 .text-sm {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 1.6;
   color: var(--color-text-dim);
   text-transform: uppercase;
@@ -94,16 +94,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 500;
 }
 
-/* Layout — prevent overlaps */
+/* Layout */
 .container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 4vw, 4rem);
+  padding: 0 clamp(1.25rem, 4vw, 4rem);
 }
 
 .section {
-  padding: var(--space-2xl) 0;
+  padding: clamp(4rem, 10vw, 10rem) 0;
   position: relative;
   isolation: isolate;
 }
@@ -120,10 +120,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 2rem;
+  padding: 0.85rem 1.75rem;
   border: 1px solid var(--color-accent);
   color: var(--color-accent);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -149,9 +149,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .btn-primary:hover svg { transform: translateX(4px); }
 
 .btn-ghost {
-  padding: 1rem 2rem;
+  padding: 0.85rem 1.75rem;
   color: var(--color-text-muted);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -161,10 +161,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .btn-ghost:hover { color: var(--color-text); }
 
 .btn-outline {
-  padding: 0.8rem 1.8rem;
+  padding: 0.75rem 1.5rem;
   border: 1px solid var(--color-text-dim);
   color: var(--color-text);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -189,7 +189,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: scaleX(0);
 }
 
-/* Grain overlay */
+/* Grain */
 .grain {
   position: fixed;
   top: 0;
@@ -209,7 +209,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-bg); }
 ::-webkit-scrollbar-thumb { background: var(--color-accent-dark); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+/* Mobile global */
+@media (max-width: 768px) {
+  .section {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
+  .section-divider {
+    margin: 0;
+  }
+
+  .heading-xl {
+    line-height: 1;
+  }
+}

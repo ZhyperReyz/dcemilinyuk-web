@@ -1,4 +1,4 @@
-/* Peel Reveal — ref: Hero Animations/4 */
+/* Peel Reveal */
 .peel {
   position: relative;
   padding: var(--space-2xl) 0;
@@ -61,10 +61,10 @@
 }
 
 .peel__feature-icon {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,13 +73,13 @@
 }
 
 .peel__feature h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
 
 .peel__feature p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .peel__image {
@@ -94,6 +94,21 @@
 }
 
 @media (max-width: 768px) {
-  .peel__grid { grid-template-columns: 1fr; }
-  .peel__image img { height: 300px; }
+  .peel {
+    min-height: auto;
+    padding: var(--space-xl) 0;
+  }
+
+  .peel__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .peel__image img {
+    height: 280px;
+  }
+
+  .peel__desc {
+    max-width: 100%;
+  }
 }

@@ -13,7 +13,6 @@
 
 .newsletter__title .text-line { display: block; overflow: hidden; }
 .newsletter__title em { color: var(--color-accent); }
-
 .newsletter__desc { margin: var(--space-md) 0 var(--space-lg); max-width: 450px; }
 
 /* Perks grid */
@@ -30,10 +29,10 @@
 }
 
 .perk__icon {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +41,7 @@
 }
 
 .perk__title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
@@ -55,7 +54,7 @@
 
 .newsletter__form {
   background: var(--color-bg-card);
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: 4px;
   border: 1px solid var(--color-border-light);
   width: 100%;
@@ -87,6 +86,17 @@
 }
 
 @media (max-width: 768px) {
-  .newsletter__grid { grid-template-columns: 1fr; }
-  .newsletter__perks-grid { grid-template-columns: 1fr; }
+  .newsletter__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .newsletter__perks-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .newsletter__form {
+    padding: 1.5rem;
+  }
 }

@@ -1,4 +1,4 @@
-/* Horizontal Scroll — ref: Hero Animations/2 */
+/* Horizontal Scroll */
 .hscroll {
   padding: var(--space-2xl) 0 0;
   overflow: hidden;
@@ -16,7 +16,7 @@
 .hscroll__strip {
   display: flex;
   gap: 3vw;
-  padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  padding: 4rem clamp(1.25rem, 4vw, 4rem);
   width: max-content;
   will-change: transform;
   align-items: center;
@@ -62,11 +62,32 @@
   will-change: transform, opacity;
 }
 
-/* First and last items get extra margin */
 .hscroll__item:first-child { margin-left: 5vw; }
 .hscroll__item:last-child { margin-right: 5vw; }
 
 @media (max-width: 768px) {
-  .hscroll__item { width: 65vw; }
-  .hscroll__item-image { height: 45vh; min-height: 280px; }
+  .hscroll__item {
+    width: 65vw;
+  }
+
+  .hscroll__item-image {
+    height: 40vh;
+    min-height: 250px;
+  }
+
+  .hscroll__strip {
+    gap: 5vw;
+    padding: 2rem clamp(1.25rem, 4vw, 4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hscroll__item {
+    width: 75vw;
+  }
+
+  .hscroll__item-image {
+    height: 35vh;
+    min-height: 220px;
+  }
 }

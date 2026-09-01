@@ -19,7 +19,7 @@
 .testimonials__quote-wrap {
   position: relative;
   padding: 0 var(--space-md);
-  min-height: 280px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,4 +83,21 @@
   background: var(--color-accent);
   width: 32px;
   border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .testimonials__quote-wrap {
+    min-height: 200px;
+    padding: 0 var(--space-sm);
+  }
+
+  .testimonials__quote-mark {
+    width: 32px;
+    height: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .testimonials__text {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
 }

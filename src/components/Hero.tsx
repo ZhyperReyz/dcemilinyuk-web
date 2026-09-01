@@ -80,7 +80,7 @@ export default function Hero() {
               <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+          <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="btn-ghost">
             Follow on Instagram
           </a>
         </div>

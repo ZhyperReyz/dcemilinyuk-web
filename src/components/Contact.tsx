@@ -38,7 +38,7 @@ export default function Contact() {
             <div className="contact__info-block reveal-child">
               <h4 className="text-sm">Follow</h4>
               <div className="contact__socials">
-                <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="contact__social-link">Instagram</a>
+                <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="contact__social-link">Instagram</a>
                 <a href="https://tiktok.com/@urjacoffee" target="_blank" rel="noopener noreferrer" className="contact__social-link">TikTok</a>
                 <a href="https://twitter.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="contact__social-link">Twitter</a>
               </div>
@@ -69,7 +69,7 @@ export default function Contact() {
                 or just to say hi — send us a DM!
               </p>
               <a
-                href="https://instagram.com/urjacoffee"
+                href="https://instagram.com/urjacoffee.id"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -85,19 +85,19 @@ export default function Contact() {
               <div className="contact__cta-icon">💬</div>
               <h3 className="heading-md">Quick Links</h3>
               <div className="contact__quick-links">
-                <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
+                <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
                   <span className="text-sm">Reserve</span>
                   <span>DM for table booking →</span>
                 </a>
-                <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
+                <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
                   <span className="text-sm">Catering</span>
                   <span>DM for event catering →</span>
                 </a>
-                <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
+                <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
                   <span className="text-sm">Wholesale</span>
                   <span>DM for bean orders →</span>
                 </a>
-                <a href="https://instagram.com/urjacoffee" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
+                <a href="https://instagram.com/urjacoffee.id" target="_blank" rel="noopener noreferrer" className="contact__quick-link">
                   <span className="text-sm">Collab</span>
                   <span>DM for partnerships →</span>
                 </a>

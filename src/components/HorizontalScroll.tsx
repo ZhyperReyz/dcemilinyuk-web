@@ -27,27 +27,33 @@ export default function HorizontalScroll() {
 
     const ctx = gsap.context(() => {
       const items = strip.querySelectorAll('.hscroll__item')
-      const totalWidth = strip.scrollWidth - window.innerWidth
 
-      // Set initial position: strip starts off-screen to the right
-      gsap.set(strip, { x: window.innerWidth * 0.3 })
+      // totalWidth = lebar penuh strip - viewport width
+      // Ini memastikan foto terakhir (paling kanan) sepenuhnya terlihat sebelum unpin
+      const getTotalWidth = () => strip.scrollWidth - window.innerWidth
 
-      // Main horizontal scroll — strip slides from right → left
-      // Pin starts when container top hits viewport center
+      // Main horizontal scroll
+      // start: 'center center' → section mulai ke-pin tepat saat CENTER section
+      //   berada di CENTER viewport. Artinya section sudah terlihat penuh di tengah layar
+      //   begitu pin aktif.
+      // end: dynamic berdasarkan totalWidth → scroll cukup panjang sampai foto
+      //   terakhir full terlihat, baru section unpin.
       const scrollTween = gsap.to(strip, {
-        x: -totalWidth,
+        x: () => -getTotalWidth(),
         ease: 'none',
         scrollTrigger: {
           trigger: container,
-          start: 'top center',   // pin starts when section top reaches viewport center
-          end: () => `+=${totalWidth}`,
-          scrub: 1.2,
+          start: 'center center',
+          end: () => `+=${getTotalWidth()}`,
+          scrub: 1,
           pin: true,
+          pinSpacing: true,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       })
 
-      // Per-item: scale + fade as each item enters center
+      // Per-item: scale + fade as each item enters center of viewport
       items.forEach((item, i) => {
         gsap.set(item, { scale: 0.85, opacity: 0.3 })
 
@@ -57,8 +63,8 @@ export default function HorizontalScroll() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: container,
-            start: () => `left+=${(i / items.length) * totalWidth - window.innerWidth * 0.3} center`,
-            end: () => `left+=${(i / items.length) * totalWidth + window.innerWidth * 0.3} center`,
+            start: () => `left+=${(i / items.length) * getTotalWidth() - window.innerWidth * 0.3} center`,
+            end: () => `left+=${(i / items.length) * getTotalWidth() + window.innerWidth * 0.3} center`,
             scrub: 1,
             containerAnimation: scrollTween,
           },
@@ -72,8 +78,8 @@ export default function HorizontalScroll() {
               opacity: 1, y: 0, duration: 0.5,
               scrollTrigger: {
                 trigger: container,
-                start: () => `left+=${(i / items.length) * totalWidth - window.innerWidth * 0.2} center`,
-                end: () => `left+=${(i / items.length) * totalWidth} center`,
+                start: () => `left+=${(i / items.length) * getTotalWidth() - window.innerWidth * 0.2} center`,
+                end: () => `left+=${(i / items.length) * getTotalWidth()} center`,
                 scrub: 1,
                 containerAnimation: scrollTween,
               },
@@ -83,8 +89,8 @@ export default function HorizontalScroll() {
       })
     }, containerRef)
 
-    // Refresh after images load
-    const refreshTimeout = setTimeout(() => ScrollTrigger.refresh(), 500)
+    // Recalculate positions after images load (Unsplash images are async)
+    const refreshTimeout = setTimeout(() => ScrollTrigger.refresh(), 800)
 
     return () => {
       clearTimeout(refreshTimeout)

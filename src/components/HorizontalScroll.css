@@ -16,8 +16,8 @@
 
 .hscroll__strip {
   display: flex;
-  gap: 3vw;
-  padding: 4rem clamp(1.25rem, 4vw, 4rem);
+  gap: 1.5vw;
+  padding: 0 clamp(1.25rem, 4vw, 4rem);
   width: max-content;
   will-change: transform;
   align-items: center;
@@ -63,8 +63,8 @@
   will-change: transform, opacity;
 }
 
-.hscroll__item:first-child { margin-left: 5vw; }
-.hscroll__item:last-child { margin-right: 5vw; }
+.hscroll__item:first-child { margin-left: 2vw; }
+.hscroll__item:last-child { margin-right: 2vw; }
 
 /* Space left for pin-spacer */
 .hscroll__container + .section {
@@ -82,8 +82,8 @@
   }
 
   .hscroll__strip {
-    gap: 5vw;
-    padding: 2rem clamp(1.25rem, 4vw, 4rem);
+    gap: 3vw;
+    padding: 0 clamp(1.25rem, 4vw, 4rem);
   }
 }
 

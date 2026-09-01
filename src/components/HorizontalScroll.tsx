@@ -46,11 +46,10 @@ export default function HorizontalScroll() {
       })
 
       items.forEach((item, i) => {
-        gsap.set(item, { scale: 0.85, opacity: 0.3 })
+        gsap.set(item, { scale: 0.9 })
 
         gsap.to(item, {
           scale: 1,
-          opacity: 1,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: container,

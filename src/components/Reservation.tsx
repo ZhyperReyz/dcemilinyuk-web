@@ -3,7 +3,7 @@ import './Reservation.css'
 
 export default function Reservation() {
   const titleRef = useTextReveal()
-  const formRef = useScrollReveal({ stagger: 0.1, y: 30 })
+  const formRef = useScrollReveal<HTMLFormElement>({ stagger: 0.1, y: 30 })
 
   return (
     <section className="reservation section" id="reservation">

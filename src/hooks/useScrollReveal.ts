@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
  * Ref: Scroll Animation/30 (OneElementScroll)
  * Triggers a staggered reveal animation on child elements when scrolling into view.
  */
-export function useScrollReveal(
+export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   options: {
     stagger?: number
     y?: number
@@ -17,7 +17,7 @@ export function useScrollReveal(
     start?: string
   } = {}
 ) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<T>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -54,8 +54,8 @@ export function useScrollReveal(
  * Ref: Text Animations/1 (ScrollTextMotion)
  * Animates text lines from below with overflow hidden wrapper.
  */
-export function useTextReveal() {
-  const containerRef = useRef<HTMLDivElement>(null)
+export function useTextReveal<T extends HTMLElement = HTMLDivElement>() {
+  const containerRef = useRef<T>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -87,8 +87,8 @@ export function useTextReveal() {
  * Ref: Scroll Animation/6 (Staggered3DGridAnimations)
  * Parallax effect on images — moves them at different speed than scroll.
  */
-export function useParallax(speed: number = 0.3) {
-  const ref = useRef<HTMLDivElement>(null)
+export function useParallax<T extends HTMLElement = HTMLDivElement>(speed: number = 0.3) {
+  const ref = useRef<T>(null)
 
   useEffect(() => {
     const el = ref.current
@@ -117,8 +117,8 @@ export function useParallax(speed: number = 0.3) {
  * Ref: Scroll Animation/22 (ImagePixelLoading)
  * Clip-path reveal animation for images.
  */
-export function useClipReveal() {
-  const ref = useRef<HTMLDivElement>(null)
+export function useClipReveal<T extends HTMLElement = HTMLDivElement>() {
+  const ref = useRef<T>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {

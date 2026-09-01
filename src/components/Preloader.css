@@ -1,0 +1,66 @@
+/* Preloader — ref: Hero Animations/20 */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: inset(0 0 0 0);
+}
+
+.preloader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preloader__logo {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+}
+
+.preloader__tagline {
+  color: var(--color-text-dim);
+}
+
+.preloader__counter {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-top: 2rem;
+}
+
+.preloader__number {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.preloader__percent {
+  font-size: 1rem;
+  color: var(--color-text-dim);
+}
+
+.preloader__line {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: var(--color-accent);
+  animation: preloader-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { opacity: 1; transform: translateX(-50%) scaleY(1); }
+  50% { opacity: 0.3; transform: translateX(-50%) scaleY(0.5); }
+}

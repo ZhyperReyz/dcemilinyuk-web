@@ -1,0 +1,72 @@
+/* Horizontal Scroll — ref: Hero Animations/2 */
+.hscroll {
+  padding: var(--space-2xl) 0 0;
+  overflow: hidden;
+}
+
+.hscroll__title .text-line { display: block; overflow: hidden; }
+.hscroll__title em { color: var(--color-accent); }
+.hscroll__subtitle { margin-bottom: var(--space-lg); }
+
+.hscroll__container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hscroll__strip {
+  display: flex;
+  gap: 3vw;
+  padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  width: max-content;
+  will-change: transform;
+  align-items: center;
+}
+
+.hscroll__item {
+  flex-shrink: 0;
+  width: 38vw;
+  max-width: 480px;
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+.hscroll__item-image {
+  width: 100%;
+  height: 55vh;
+  min-height: 350px;
+  overflow: hidden;
+  border-radius: 3px;
+  position: relative;
+}
+
+.hscroll__item-image img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  position: absolute;
+  top: -10%;
+  left: 0;
+  will-change: transform;
+  transition: filter 0.6s;
+}
+
+.hscroll__item:hover .hscroll__item-image img {
+  filter: brightness(1.05);
+}
+
+.hscroll__item-label {
+  display: block;
+  margin-top: 1.25rem;
+  color: var(--color-text-muted);
+  transform: translateY(15px);
+  will-change: transform, opacity;
+}
+
+/* First and last items get extra margin */
+.hscroll__item:first-child { margin-left: 5vw; }
+.hscroll__item:last-child { margin-right: 5vw; }
+
+@media (max-width: 768px) {
+  .hscroll__item { width: 65vw; }
+  .hscroll__item-image { height: 45vh; min-height: 280px; }
+}

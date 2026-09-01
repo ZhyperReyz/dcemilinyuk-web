@@ -1,0 +1,99 @@
+/* Peel Reveal — ref: Hero Animations/4 */
+.peel {
+  position: relative;
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+  min-height: 80vh;
+}
+
+.peel__bars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.peel__bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: var(--color-accent-dark);
+  will-change: transform;
+}
+
+.peel__bar:nth-child(odd) {
+  background: var(--color-bg-card);
+}
+
+.peel__content {
+  position: relative;
+  z-index: 1;
+}
+
+.peel__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 8rem);
+  align-items: center;
+}
+
+.peel__text h2 {
+  margin-bottom: var(--space-md);
+}
+
+.peel__text h2 em { color: var(--color-accent); }
+
+.peel__desc {
+  margin-bottom: var(--space-lg);
+  max-width: 480px;
+}
+
+.peel__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.peel__feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.peel__feature-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-card);
+  border-radius: 8px;
+}
+
+.peel__feature h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.peel__feature p {
+  font-size: 0.85rem;
+}
+
+.peel__image {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.peel__image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .peel__grid { grid-template-columns: 1fr; }
+  .peel__image img { height: 300px; }
+}

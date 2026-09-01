@@ -1,0 +1,104 @@
+/* Reservation */
+.reservation {
+  position: relative;
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.reservation__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(200, 149, 108, 0.06) 0%, transparent 50%),
+    var(--color-bg-warm);
+  z-index: 0;
+}
+
+.reservation .container { position: relative; z-index: 1; }
+
+.reservation__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 8rem);
+  align-items: start;
+}
+
+.reservation__title .text-line { display: block; overflow: hidden; }
+.reservation__title em { color: var(--color-accent); }
+
+.reservation__desc {
+  margin: var(--space-md) 0;
+  max-width: 420px;
+}
+
+.reservation__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: var(--space-lg);
+}
+
+.reservation__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.reservation__detail .text-sm { color: var(--color-accent); }
+
+/* Form */
+.reservation__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--color-bg-card);
+  padding: 2.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-light);
+}
+
+.res-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.res-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.res-field label { color: var(--color-accent); }
+
+.form-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.form-input:focus { border-bottom-color: var(--color-accent); }
+.form-input::placeholder { color: var(--color-text-dim); }
+
+.form-select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%238a8279' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+}
+
+.form-select option { background: var(--color-bg-card); color: var(--color-text); }
+
+.form-textarea { resize: vertical; min-height: 80px; }
+
+@media (max-width: 768px) {
+  .reservation__grid { grid-template-columns: 1fr; }
+  .res-row { grid-template-columns: 1fr; }
+}

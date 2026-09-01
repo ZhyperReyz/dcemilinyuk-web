@@ -1,0 +1,136 @@
+/* About section */
+.about {
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 8rem);
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+/* Image column */
+.about__image-col {
+  position: relative;
+}
+
+.about__image {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.about__image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.about__image-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  border: 1px solid var(--color-accent);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Text column */
+.about__text-col {
+  padding: var(--space-md) 0;
+}
+
+.about__label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+}
+
+.about__label-line {
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.about__title {
+  margin-bottom: var(--space-md);
+}
+
+.about__title .text-line {
+  display: block;
+  overflow: hidden;
+}
+
+.about__title em {
+  color: var(--color-accent);
+}
+
+.about__desc {
+  margin-bottom: var(--space-sm);
+}
+
+/* Stats */
+.about__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  display: block;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 50px;
+  background: var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .about__image img {
+    height: 350px;
+  }
+
+  .about__stats {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat {
+    flex: 0 0 45%;
+  }
+}

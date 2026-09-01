@@ -1,0 +1,123 @@
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--space-xl);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.15) 0%,
+    rgba(10, 10, 10, 0.45) 50%,
+    rgba(10, 10, 10, 0.92) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+}
+
+.hero-eyebrow__line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.hero-title {
+  margin-bottom: var(--space-md);
+}
+
+.hero-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+}
+
+.hero-word {
+  display: inline-block;
+}
+
+.hero-word--accent { color: var(--color-accent); }
+.hero-word--italic { font-style: italic; color: var(--color-accent-light); }
+
+.hero-subtitle {
+  max-width: 500px;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  right: clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 1;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: var(--color-accent);
+  animation: scroll-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.4; transform: scaleY(0.5); }
+}
+
+.scroll-indicator .text-sm {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@media (max-width: 768px) {
+  .hero { align-items: center; padding-bottom: var(--space-lg); }
+  .scroll-indicator { display: none; }
+  .hero-cta-group { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}

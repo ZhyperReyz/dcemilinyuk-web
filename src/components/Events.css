@@ -1,0 +1,132 @@
+/* Events */
+.events {
+  padding: var(--space-2xl) 0;
+}
+
+.events__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-xl);
+  gap: var(--space-md);
+}
+
+.events__title .text-line { display: block; overflow: hidden; }
+.events__title em { color: var(--color-accent); }
+
+.events__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Event card */
+.event-card {
+  display: grid;
+  grid-template-columns: 100px 1px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background 0.3s;
+}
+
+.event-card:first-child {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.event-card:hover {
+  background: var(--color-bg-card);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.event-card__date {
+  text-align: center;
+}
+
+.event-card__date-day {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.event-card__date-month {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.event-card__divider {
+  width: 1px;
+  height: 60px;
+  background: var(--color-border);
+  justify-self: center;
+}
+
+.event-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.event-card__info .text-sm { color: var(--color-accent); }
+
+.event-card__title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.event-card__desc {
+  font-size: 0.9rem;
+  max-width: 400px;
+}
+
+.event-card__action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.event-card__price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.event-card__spots {
+  color: var(--color-accent);
+}
+
+.btn-primary--sm {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .events__header { flex-direction: column; align-items: flex-start; }
+
+  .event-card {
+    grid-template-columns: 60px 1fr;
+    gap: 1rem;
+  }
+
+  .event-card__divider { display: none; }
+
+  .event-card__action {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}

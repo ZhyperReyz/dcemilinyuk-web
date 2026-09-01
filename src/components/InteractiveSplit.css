@@ -1,0 +1,63 @@
+/* Interactive Split — ref: Hover Effects/1 */
+.split {
+  padding: var(--space-2xl) 0 0;
+  cursor: col-resize;
+}
+
+.split__title { margin-bottom: var(--space-sm); }
+.split__title .text-line { display: block; overflow: hidden; }
+.split__title em { color: var(--color-accent); }
+
+.split__subtitle { margin-bottom: var(--space-lg); }
+
+.split__images {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.split__left,
+.split__right {
+  position: relative;
+  overflow: hidden;
+  transition: width 0s;
+}
+
+.split__left {
+  width: 66.66%;
+}
+
+.split__right {
+  width: 33.33%;
+}
+
+.split__left img,
+.split__right img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split__label {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.split__right .split__label {
+  left: auto;
+  right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .split__images { height: 50vh; }
+}

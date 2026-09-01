@@ -1,0 +1,19 @@
+/* App */
+.app {
+  position: relative;
+  isolation: isolate;
+}
+
+.main {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.main--visible {
+  opacity: 1;
+}
+
+/* Prevent any section from overlapping */
+section {
+  isolation: isolate;
+}

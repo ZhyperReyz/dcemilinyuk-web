@@ -1,0 +1,116 @@
+/* Featured / Specials */
+.featured {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg-warm);
+}
+
+.featured__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-xl);
+  gap: var(--space-md);
+}
+
+.featured__title .text-line { display: block; overflow: hidden; }
+.featured__title em { color: var(--color-accent); }
+
+.featured__subtitle { max-width: 380px; text-align: right; }
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card */
+.featured-card {
+  background: var(--color-bg-card);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s;
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.featured-card__image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.featured-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.featured-card:hover .featured-card__image img {
+  transform: scale(1.08);
+}
+
+.featured-card__content {
+  padding: 1.5rem;
+}
+
+.featured-card__tag {
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-card__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.featured-card__desc {
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.featured-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-card__price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-accent);
+}
+
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.3s;
+}
+
+.btn-text svg { transition: transform 0.3s var(--ease-out-expo); }
+.btn-text:hover { color: var(--color-accent); }
+.btn-text:hover svg { transform: translateX(3px); }
+
+@media (max-width: 1024px) {
+  .featured__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .featured__header { flex-direction: column; align-items: flex-start; }
+  .featured__subtitle { text-align: left; }
+  .featured__grid { grid-template-columns: 1fr; }
+}

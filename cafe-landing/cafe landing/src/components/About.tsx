@@ -84,7 +84,7 @@ export default function About() {
             </div>
 
             <p className="about__desc text-body reveal-child">
-              Founded in 2019 in the heart of the city, URJA started as a small
+              Founded in 2019 in the heart of the city, Naam Coffee started as a small
               garage roastery with a big dream: to bring specialty-grade coffee
               to everyone, without pretension.
             </p>

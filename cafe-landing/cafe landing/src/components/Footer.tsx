@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__col">
-            <div className="footer__logo">URJA</div>
+            <div className="footer__logo">NAAM</div>
             <p className="text-body">
               Artisan coffee, roasted with care in the heart of the city.
             </p>
@@ -41,13 +41,13 @@ export default function Footer() {
               <a href="#" className="footer__link">Instagram</a>
               <a href="#" className="footer__link">TikTok</a>
               <a href="#" className="footer__link">Twitter</a>
-              <a href="https://www.instagram.com/urjacoffee.id?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram DM</a>
+              <a href="https://www.instagram.com/naamcoffee.id?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="footer__link">Instagram DM</a>
             </div>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <p className="text-sm">© 2026 URJA Coffee. All rights reserved.</p>
+          <p className="text-sm">© 2026 NAAM Coffee. All rights reserved.</p>
           <p className="text-sm">Crafted with ☕ and intention</p>
         </div>
       </div>

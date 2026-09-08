@@ -5,13 +5,13 @@ import './SpecialtyDrinks.css'
 
 /**
  * Ref: Hover Effects/2 — text chars disperse on hover, background image appears
- * Uses real URJA menu data as signature drinks
+ * Uses real Naam Coffee menu data as signature drinks
  */
 
 const signatureDrinks = [
   {
     name: 'Putih',
-    desc: 'Kopi susu klasik racikan URJA',
+    desc: 'Kopi susu klasik racikan Naam Coffee',
     price: 'Rp 28.000',
     image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80',
   },

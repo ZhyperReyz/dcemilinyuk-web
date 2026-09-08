@@ -71,7 +71,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   return (
     <div ref={preloaderRef} className="preloader">
       <div className="preloader__inner">
-        <div className="preloader__logo">URJA</div>
+        <div className="preloader__logo">NAAM</div>
         <div className="preloader__tagline text-sm">Artisan Coffee</div>
         <div className="preloader__counter">
           <span ref={counterRef} className="preloader__number">00</span>

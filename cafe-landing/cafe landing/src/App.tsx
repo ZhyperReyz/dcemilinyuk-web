@@ -22,7 +22,7 @@ import Footer from './components/Footer'
 import './App.css'
 
 /**
- * URJA — Artisan Coffee
+ * Naam Coffee — Artisan Coffee
  *
  * Sections:
  * 1. Hero               — text reveal + parallax bg

@@ -23,7 +23,7 @@ export interface MenuItem {
 
 export const menuData: Record<string, MenuItem[]> = {
   'Kopi': [
-    { name: 'Putih', price: '28.000', desc: 'Kopi susu klasik racikan URJA' },
+    { name: 'Putih', price: '28.000', desc: 'Kopi susu klasik racikan Naam Coffee' },
     { name: 'Legit', price: '28.000', desc: 'Kopi susu manis dengan salted foam dan saus butterscotch' },
     { name: 'Kalpatharu', price: '28.000', desc: 'Kopi susu manis rasa bolu pisang' },
     { name: 'Mentigi', price: '28.000', desc: 'Kopi susu manis rasa blueberry dengan sentuhan cheesecake' },
@@ -34,7 +34,7 @@ export const menuData: Record<string, MenuItem[]> = {
     { name: 'Enerji', price: '32.000', desc: 'Espresso dengan tambahan Red Bull Energy Drink' },
   ],
   'Kopi Kaleng': [
-    { name: 'Putih', price: '32.000 / 38.000', desc: 'Kopi susu klasik racikan URJA' },
+    { name: 'Putih', price: '32.000 / 38.000', desc: 'Kopi susu klasik racikan Naam Coffee' },
     { name: 'Arrum', price: '32.000 / 38.000', desc: 'Kopi susu manis dengan campuran sirup pandan' },
     { name: 'Puspa', price: '32.000 / 38.000', desc: 'Kopi susu manis dengan sentuhan floral' },
     { name: 'Badam', price: '32.000 / 38.000', desc: 'Kopi susu manis rasa kacang pistachio' },
@@ -109,7 +109,7 @@ export default function Menu() {
         <div className="menu__header">
           <div ref={titleRef} className="menu__title heading-lg">
             <span className="text-line">Menu</span>
-            <span className="text-line"><em>URJA</em></span>
+            <span className="text-line"><em>NAAM</em></span>
           </div>
           <p className="text-body menu__subtitle reveal-child">
             Kopi, minuman, dan makanan — dibuat dengan sepenuh hati.
@@ -160,14 +160,14 @@ export default function Menu() {
             *Harga belum termasuk PPN
           </p>
           <p className="text-sm" style={{ textTransform: 'none', letterSpacing: '0' }}>
-            #ngopidiurja
+            #ngopidinaam
           </p>
         </div>
 
         <div className="menu__footer reveal-child">
           <p className="text-body">Follow kami di Instagram</p>
-          <a href="https://www.instagram.com/urjacoffee.id?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="btn-outline">
-            @urjacoffee.id
+          <a href="https://www.instagram.com/naamcoffee.id?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="btn-outline">
+            @naamcoffee.id
           </a>
         </div>
       </div>

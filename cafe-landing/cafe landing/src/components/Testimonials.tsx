@@ -5,7 +5,7 @@ import './Testimonials.css'
 
 const reviews = [
   {
-    text: "URJA changed how I think about coffee. The Ethiopian Yirgacheffe is unlike anything I've had — bright, complex, and absolutely addictive.",
+    text: "Naam Coffee changed how I think about coffee. The Ethiopian Yirgacheffe is unlike anything I've had — bright, complex, and absolutely addictive.",
     author: 'Sarah M.',
     role: 'Coffee Enthusiast',
     rating: 5,

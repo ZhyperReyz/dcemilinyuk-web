@@ -87,7 +87,7 @@ export default function Navigation() {
   return (
     <>
       <header className={`topnav ${scrolled ? 'topnav--scrolled' : ''} ${isOpen ? 'topnav--open' : ''}`}>
-        <button className="topnav__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>URJA</button>
+        <button className="topnav__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>NAAM</button>
         <button className="topnav__menu-btn" onClick={toggle} aria-label="Toggle menu">
           <span className="topnav__btn-label">
             <span ref={btnLabelRef} className="topnav__btn-text">

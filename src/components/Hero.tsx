@@ -36,7 +36,7 @@ export default function Hero() {
     <section ref={heroRef} className="hero" id="hero">
       <div className="hero-bg">
         <div className="hero-bg-image" style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&q=80')`,
         }} />
         <div className="hero-bg-overlay" />
       </div>
@@ -75,24 +75,6 @@ export default function Hero() {
               <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-            Hubungi via WhatsApp
-          </a>
-        </div>
-
-        <div className="hero-stats">
-          <div className="hero-stat">
-            <div className="hero-stat__number">15+</div>
-            <div className="hero-stat__label">Produk</div>
-          </div>
-          <div className="hero-stat">
-            <div className="hero-stat__number">5</div>
-            <div className="hero-stat__label">Kategori</div>
-          </div>
-          <div className="hero-stat">
-            <div className="hero-stat__number">1.2K+</div>
-            <div className="hero-stat__label">Pelanggan</div>
-          </div>
         </div>
       </div>
 

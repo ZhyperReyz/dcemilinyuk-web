@@ -101,7 +101,7 @@ export default function PeelReveal() {
           </div>
           <div className="peel__image">
             <img
-              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80"
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
               alt="Suasana DcemilinYuk"
               loading="lazy"
             />

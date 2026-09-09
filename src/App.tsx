@@ -71,6 +71,9 @@ export default function App() {
         <Hero />
         <div className="section-divider" />
 
+        <Featured />
+        <div className="section-divider" />
+
         <Categories />
         <div className="section-divider" />
 
@@ -78,9 +81,6 @@ export default function App() {
         <div className="section-divider" />
 
         <PeelReveal />
-        <div className="section-divider" />
-
-        <Featured />
         <div className="section-divider" />
 
         <SpecialtyDrinks />

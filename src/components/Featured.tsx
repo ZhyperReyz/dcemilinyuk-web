@@ -34,8 +34,8 @@ export default function Featured() {
       <div className="container">
         <div className="featured__header">
           <div ref={titleRef} className="featured__title heading-lg">
-            <span className="text-line">Paling</span>
-            <span className="text-line"><em>Laris</em></span>
+            <span className="text-line">Makanan</span>
+            <span className="text-line"><em>Terlaris</em></span>
           </div>
           <p className="text-body featured__subtitle reveal-child">
             Produk terfavorit yang paling banyak dipesan pelanggan kami.
@@ -56,7 +56,6 @@ export default function Featured() {
                 />
               </div>
               <div className="featured-card__content">
-                <span className="featured-card__tag text-sm">{item.badge}</span>
                 <h3 className="featured-card__title">{item.name}</h3>
                 <p className="featured-card__desc text-body">{item.description}</p>
                 <div className="featured-card__footer">

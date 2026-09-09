@@ -1,0 +1,202 @@
+/* ════════════════════════════════════════
+   NAVBAR — Awwwards Nav Menus/1 pattern
+   Fullscreen hamburger with shutter open
+   + stagger line reveal
+════════════════════════════════════════ */
+
+/* ─── Top bar ─── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 800;
+  padding: 20px 0;
+  transition: padding 0.4s var(--ease-out), background 0.4s, border-color 0.4s;
+  border-bottom: 1px solid transparent;
+}
+.navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(12,8,4,0.85);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-color: var(--border);
+}
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(254,249,240,0.88);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Logo */
+.navbar__logo {
+  font-family: var(--font-d);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+.navbar__logo-icon { font-size: 1.4rem; }
+.navbar__logo em { font-style: normal; color: var(--amber); }
+
+/* Desktop links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.navbar__link {
+  position: relative;
+  padding: 8px 14px;
+  font-family: var(--font-d);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-3);
+  border: none; background: none;
+  transition: color 0.2s;
+  border-radius: 8px;
+  text-align: center;
+}
+.navbar__link:hover { color: var(--text); background: rgba(245,158,11,0.06); }
+.navbar__link.active { color: var(--amber); }
+
+/* Cart button */
+.navbar__cart {
+  position: relative;
+  width: 42px; height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+.navbar__cart:hover { border-color: var(--amber); transform: scale(1.05); }
+.navbar__cart-badge {
+  position: absolute;
+  top: -6px; right: -6px;
+  min-width: 18px; height: 18px;
+  background: var(--chili);
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: var(--font-m);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  animation: popIn 0.3s var(--ease-spring);
+}
+@keyframes popIn {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+/* Theme toggle */
+.navbar__theme {
+  width: 42px; height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-2);
+  font-size: 1.1rem;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.navbar__theme:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Hamburger */
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.navbar__burger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.35s var(--ease-jump), opacity 0.25s;
+}
+.navbar__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.navbar__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Fullscreen menu (Awwwards Nav/1 shutter) ─── */
+.fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  display: none;
+}
+.fullscreen-menu.open { display: block; pointer-events: all; }
+
+.menu-shutter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+.menu-shutter__left,
+.menu-shutter__right {
+  flex: 1;
+  background: var(--bg-2);
+  transform-origin: top;
+}
+.menu-shutter__left  { transform: rotate(-180deg); transform-origin: left; }
+.menu-shutter__right { transform: rotate(180deg);  transform-origin: right; }
+
+.menu-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 40px;
+  gap: 8px;
+}
+.menu-content a {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--text);
+  overflow: hidden;
+  display: block;
+  line-height: 1.1;
+  padding: 4px 0;
+}
+.menu-content a span { display: block; transform: translateY(110%); }
+.menu-content a:hover span { color: var(--amber); }
+
+.menu-footer {
+  position: absolute;
+  bottom: 40px; left: 40px; right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: var(--text-3);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 768px) {
+  .navbar__links, .navbar__theme { display: none; }
+  .navbar__burger { display: flex; }
+  .navbar__inner { gap: 12px; }
+}

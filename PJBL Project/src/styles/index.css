@@ -4,21 +4,21 @@
    ============================================ */
 
 :root {
-  --color-bg: #121218;
-  --color-bg-warm: #1a1a24;
-  --color-bg-card: #1e1e2a;
-  --color-bg-card-hover: #252535;
-  --color-surface: #22222e;
-  --color-text: #f0e6ef;
-  --color-text-muted: #b8a8b5;
-  --color-text-dim: #6d5e6a;
-  --color-accent: #FF7A8A;
-  --color-accent-light: #FF9EAA;
-  --color-accent-dark: #E05A6A;
+  --color-bg: #0d2818;
+  --color-bg-warm: #0f2e1c;
+  --color-bg-card: #113320;
+  --color-bg-card-hover: #164028;
+  --color-surface: #133822;
+  --color-text: #ffffff;
+  --color-text-muted: #c8e6c9;
+  --color-text-dim: #66bb6a;
+  --color-accent: #FF6B9D;
+  --color-accent-light: #FF8FB4;
+  --color-accent-dark: #E0457A;
   --color-success: #4ade80;
   --color-wa: #25D366;
-  --color-border: rgba(255, 122, 138, 0.15);
-  --color-border-light: rgba(255, 122, 138, 0.08);
+  --color-border: rgba(76, 175, 80, 0.15);
+  --color-border-light: rgba(76, 175, 80, 0.08);
 
   --font-display: 'Poppins', -apple-system, sans-serif;
   --font-body: 'Poppins', -apple-system, sans-serif;
@@ -307,7 +307,7 @@ em {
   right: 0;
   z-index: 1000;
   height: 64px;
-  background: rgba(18, 18, 24, 0.9);
+  background: rgba(13, 40, 24, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
@@ -315,7 +315,7 @@ em {
 }
 
 .navbar--scrolled {
-  background: rgba(18, 18, 24, 0.98);
+  background: rgba(13, 40, 24, 0.98);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -513,9 +513,9 @@ em {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(18, 18, 24, 0.85) 0%,
-    rgba(18, 18, 24, 0.65) 50%,
-    rgba(18, 18, 24, 0.82) 100%
+    rgba(13, 40, 24, 0.85) 0%,
+    rgba(13, 40, 24, 0.65) 50%,
+    rgba(13, 40, 24, 0.82) 100%
   );
 }
 
@@ -1016,7 +1016,7 @@ em {
    CTA
    ============================================ */
 .cta-banner {
-  background: linear-gradient(135deg, #E05A6A, #FF7A8A);
+  background: linear-gradient(135deg, #E0457A, #FF6B9D);
   border-radius: 20px;
   padding: clamp(3rem, 6vw, 5rem);
   text-align: center;

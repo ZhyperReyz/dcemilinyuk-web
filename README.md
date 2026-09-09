@@ -1,35 +1,117 @@
-# React + TypeScript + Vite
+# DcemilinYuk — Cemilan & Minuman Favorit
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Website katalog cemilan dan minuman dari pedagang kecil lokal Indonesia. Dibuat dengan React, TypeScript, dan Vite.
 
-Currently, two official plugins are available:
+## Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[github.com/ZhyperReyz/dcemilinyuk-web](https://github.com/ZhyperReyz/dcemilinyuk-web)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **React 19** + TypeScript
+- **Vite 8** — build tool
+- **GSAP** + ScrollTrigger — animasi scroll
+- **Lenis** — smooth scroll
+- **Vanilla CSS** — custom properties, dark theme
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Fitur & Animasi
 
-## Expanding the Oxlint configuration
+| Section | Animasi |
+|---------|---------|
+| **Preloader** | Counter animasi 000-100 + curtain reveal |
+| **Navbar** | Horizontal fixed, active underline, scroll blur effect |
+| **Hero** | Word-by-word text reveal + parallax background |
+| **Categories** | Scroll reveal cards |
+| **Products** | Filter tab kategori + WA order button |
+| **PeelReveal** | Horizontal bars peel away on scroll |
+| **Featured** | Best seller cards dengan hover lift |
+| **SpecialtyDrinks** | Text scatter on hover |
+| **Gallery** | Clip-path image reveals |
+| **HorizontalScroll** | Horizontal gallery dengan GSAP pin + scroll |
+| **About** | Clip-path reveal + stat counter animation |
+| **HowToOrder** | Step cards dengan staggered reveal |
+| **Testimonials** | Auto-rotating quotes |
+| **CTA** | Scale-in WhatsApp banner |
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Data Produk
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+CEMILAN    — Risol Mayo, Siomay, Lumpiah, Piscok, Sosis Bakar, Tahu Gejrot
+MINUMAN    — Es Teh Tarik, Kopi Susu, Es Kepiting
+MAKANAN    — Lemper Ayam, Nasi Uduk, Chicken Katsu, Bakso Mercon
+KUE        — Bolen Pisang, Donat Kentang
+FROZEN     — Sweet Potato Fries
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Cara Jalankan
+
+```bash
+# Install dependencies
+npm install
+
+# Jalankan dev server
+npm run dev
+
+# Build untuk production
+npm run build
+
+# Preview build
+npm run preview
+```
+
+## Struktur Project
+
+```
+pjbl/
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+└── src/
+    ├── main.tsx
+    ├── App.tsx / App.css
+    ├── styles/
+    │   └── index.css          — Global tokens, reset, utilities
+    ├── hooks/
+    │   ├── useLenis.ts        — Smooth scroll (Lenis + GSAP sync)
+    │   └── useScrollReveal.ts — Reusable scroll animation hooks
+    ├── data/
+    │   └── products.ts        — Produk & kategori data
+    └── components/
+        ├── Navigation.tsx/css  — Navbar horizontal
+        ├── Hero.tsx            — Landing hero
+        ├── Categories.tsx      — Kategori cards
+        ├── Products.tsx        — Produk grid + filter
+        ├── PeelReveal.tsx      — Peel animation
+        ├── Featured.tsx        — Best seller cards
+        ├── SpecialtyDrinks.tsx — Signature items hover
+        ├── Gallery.tsx         — Clip-path image grid
+        ├── HorizontalScroll.tsx— Horizontal gallery
+        ├── About.tsx           — Brand story + stats
+        ├── HowToOrder.tsx      — Cara pesan steps
+        ├── Testimonials.tsx    — Rotating quotes
+        ├── CTA.tsx             — WhatsApp CTA
+        ├── Footer.tsx          — Footer links
+        └── Preloader.tsx       — Loading animation
+```
+
+## Brand Guidelines
+
+- **Font Display:** Playfair Display
+- **Font Body:** Inter
+- **Accent Color:** #c8956c (warm brown)
+- **Background:** #0a0a0a (near black)
+- **WhatsApp:** #25D366
+
+## Catatan
+
+- Harga dalam format Rp XX.000
+- Badge: Best Seller, Baru, Pedas
+- Pesan via WhatsApp langsung dari halaman produk
+
+## License
+
+(c) 2026 DcemilinYuk. All rights reserved.

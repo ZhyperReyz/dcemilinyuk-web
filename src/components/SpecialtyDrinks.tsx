@@ -7,19 +7,19 @@ const signatureItems = [
     name: 'Es Teh Tarik',
     desc: 'Teh tarik premium dengan rasa creamy dan manis yang pas',
     price: 'Rp 8.000',
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80',
   },
   {
     name: 'Bolen Pisang',
     desc: 'Bolen pisang homemade dengan kulit renyah dan isian pisang melimpah',
     price: 'Rp 15.000',
-    image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1609126953519-7f4a5b1e9e58?w=600&q=80',
   },
   {
     name: 'Risol Mayo',
     desc: 'Risol isi mayo dan smoked beef, dibalut tepung roti yang renyah',
     price: 'Rp 3.000',
-    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80',
   },
   {
     name: 'Kopi Susu',

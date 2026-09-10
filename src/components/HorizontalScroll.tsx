@@ -6,12 +6,12 @@ import { useTextReveal } from '../hooks/useScrollReveal'
 gsap.registerPlugin(ScrollTrigger)
 
 const images = [
-  { src: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80', alt: 'Suasana kedai' },
-  { src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80', alt: 'Interior hangat' },
-  { src: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800&q=80', alt: 'Area duduk' },
-  { src: 'https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&q=80', alt: 'Latte art' },
-  { src: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&q=80', alt: 'Pour over' },
-  { src: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80', alt: 'Secangkir kopi' },
+  { src: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80', alt: 'Suasana kedai' },
+  { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80', alt: 'Interior hangat' },
+  { src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80', alt: 'Area duduk' },
+  { src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80', alt: 'Latte art' },
+  { src: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=800&q=80', alt: 'Pour over' },
+  { src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80', alt: 'Secangkir kopi' },
 ]
 
 export default function HorizontalScroll() {
@@ -23,6 +23,17 @@ export default function HorizontalScroll() {
     const container = containerRef.current
     const strip = stripRef.current
     if (!container || !strip) return
+
+    // Disable horizontal scroll animation on mobile
+    if (window.innerWidth <= 768) {
+      const items = strip.querySelectorAll('.hscroll__item')
+      items.forEach((item) => {
+        gsap.set(item, { scale: 1, opacity: 1 })
+        const label = item.querySelector('.hscroll__item-label')
+        if (label) gsap.set(label, { opacity: 1, y: 0 })
+      })
+      return
+    }
 
     const ctx = gsap.context(() => {
       const items = strip.querySelectorAll('.hscroll__item')

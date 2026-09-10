@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PRODUCTS } from '../data/products';
-import { CartItem, addToCart, formatRupiah } from '../utils/cart';
+import { type CartItem, addToCart, formatRupiah } from '../utils/cart';
 import './BestSellers.css';
 
 gsap.registerPlugin(ScrollTrigger);

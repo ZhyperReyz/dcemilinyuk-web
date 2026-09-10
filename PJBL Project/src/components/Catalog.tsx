@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PRODUCTS, CATEGORIES, Category } from '../data/products';
-import { CartItem, addToCart, formatRupiah } from '../utils/cart';
+import { PRODUCTS, CATEGORIES, type Category } from '../data/products';
+import { type CartItem, addToCart, formatRupiah } from '../utils/cart';
 import './Catalog.css';
 
 gsap.registerPlugin(ScrollTrigger);

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { CartItem, cartCount } from '../utils/cart';
+import { type CartItem, cartCount } from '../utils/cart';
 import './Navbar.css';
 
 interface NavbarProps {

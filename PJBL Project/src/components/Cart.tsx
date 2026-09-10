@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { CartItem, removeFromCart, updateQty, cartTotal, buildWhatsAppMessage, formatRupiah } from '../utils/cart';
+import { type CartItem, removeFromCart, updateQty, cartTotal, buildWhatsAppMessage, formatRupiah } from '../utils/cart';
 import { ADMIN_WA, STORE_NAME } from '../data/products';
 import './Cart.css';
 

@@ -1,0 +1,156 @@
+/* ─── ABOUT ─── */
+.about-section { position: relative; overflow: hidden; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text {
+  color: var(--text-2);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.about-text strong { color: var(--amber); font-weight: 600; }
+
+/* Values */
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+.about-value-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.about-value-icon { font-size: 1.4rem; }
+.about-value-title {
+  font-family: var(--font-d);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.about-value-desc { font-size: 0.72rem; color: var(--text-3); }
+
+/* About card */
+.about-right { display: flex; flex-direction: column; gap: 16px; }
+.about-card {
+  padding: 32px;
+  text-align: center;
+}
+.about-card-emoji { font-size: 3rem; margin-bottom: 12px; }
+.about-card h3 {
+  font-size: 1.3rem; color: var(--text);
+  margin-bottom: 6px;
+}
+.about-card p { font-size: 0.85rem; color: var(--text-3); }
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.about-stat { display: flex; flex-direction: column; align-items: center; padding: 8px; }
+.about-stat-val {
+  font-family: var(--font-d);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--amber);
+}
+.about-stat-label { font-size: 0.65rem; color: var(--text-3); margin-top: 3px; text-align: center; }
+
+/* Testimonials */
+.about-testimonials { display: flex; flex-direction: column; gap: 12px; }
+.testimonial { padding: 16px 20px; }
+.testimonial-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.testimonial-avatar {
+  width: 36px; height: 36px;
+  background: var(--amber);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-d); font-weight: 800; font-size: 0.9rem;
+  color: var(--text-inv); flex-shrink: 0;
+}
+.testimonial-name { font-weight: 600; font-size: 0.85rem; color: var(--text); }
+.testimonial-msg { font-size: 0.82rem; color: var(--text-2); line-height: 1.65; font-style: italic; }
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.contact-info { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+.contact-info-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition: border-color 0.2s;
+}
+.contact-info-row:hover { border-color: var(--border-2); }
+.contact-info-icon { font-size: 1.3rem; flex-shrink: 0; }
+.contact-info-label { font-size: 0.72rem; color: var(--text-3); font-family: var(--font-m); margin-bottom: 3px; letter-spacing: 0.06em; text-transform: uppercase; }
+.contact-info-value { font-size: 0.88rem; color: var(--text); font-weight: 500; }
+.contact-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Map */
+.contact-map-wrap { position: sticky; top: 100px; }
+.contact-map {
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-map-pin { font-size: 4rem; z-index: 2; }
+.contact-map-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+.contact-map-label strong { font-size: 1rem; color: var(--text); }
+.contact-map-label span { font-size: 0.8rem; color: var(--text-3); }
+.contact-map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,158,11,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,158,11,0.06) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+@media (max-width: 900px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-map-wrap { position: static; }
+}
+@media (max-width: 600px) {
+  .about-values { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: repeat(2, 1fr); gap: 12px 0; }
+}
